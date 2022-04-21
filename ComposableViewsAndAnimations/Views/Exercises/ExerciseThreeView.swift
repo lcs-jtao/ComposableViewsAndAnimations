@@ -51,6 +51,18 @@ struct ExerciseThreeView: View {
                 //       To see options, scroll down to the "Transforming views" section of the web page given here...
                 //
                 // https://www.hackingwithswift.com/quick-start/swiftui
+                
+                Capsule()
+                    .frame(width: 200, height: 100)
+                    .foregroundColor(.red)
+                    .offset(x: 0, y: 75)
+                    .rotation3DEffect(.degrees(rotationAmount), axis: (x: 0, y: 1, z: 0))
+                    .onTapGesture {
+                        withAnimation(.interpolatingSpring(stiffness: 5, damping: 1)) {
+                            rotationAmount += 360.0
+                        }
+                    }
+                
                 Text(typeFace)
                     .font(.custom(typeFace, size: 30.0))
                     .rotation3DEffect(.degrees(rotationAmount), axis: (x: 0,
@@ -60,11 +72,8 @@ struct ExerciseThreeView: View {
                         withAnimation(.interpolatingSpring(stiffness: 5, damping: 1)) {
                             rotationAmount += 360.0
                         }
+                        typeFace = ExerciseThreeView.fontNames.randomElement()!
                     }
-                
-                Capsule()
-                    .frame(width: 200, height: 100)
-                    .foregroundColor(.red)
                 
             }
             .navigationTitle("Exercise 3")
