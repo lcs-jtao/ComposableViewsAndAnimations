@@ -17,6 +17,9 @@ struct ExerciseTwoView: View {
         
     // Whether to apply the animation
     @State private var useAnimation = false
+    
+    // Controls the size of the circle
+    @State private var offset: CGFloat = -150.0
 
     // MARK: Computed properties
 
@@ -27,8 +30,14 @@ struct ExerciseTwoView: View {
             VStack {
 
                 Circle()
-                    .frame(width: 200, height: 200)
+                    .frame(width: 150, height: 150)
                     .foregroundColor(.blue)
+                    .offset(x: 0, y: offset)
+                    .onTapGesture {
+                        withAnimation(.interpolatingSpring(mass: 1.0, stiffness: 1.0, damping: 0.75, initialVelocity: 10)) {
+                            offset += 40
+                        }
+                    }
                 
             }
             .navigationTitle("Exercise 2")
