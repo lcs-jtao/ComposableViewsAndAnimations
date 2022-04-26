@@ -36,7 +36,11 @@ struct ExerciseOneView: View {
                         // Change the scale factor
                         scaleFactor = 2.0
                     }
-                    .animation(.easeInOut(duration: 2.5))
+                    .animation(
+                        Animation
+                            .easeInOut(duration: 2.0)
+                            .repeatForever(autoreverses: true)
+                    )
                 
             }
             .navigationTitle("Exercise 1")
