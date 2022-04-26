@@ -48,7 +48,9 @@ struct CustomComposableView: View {
             }
         }
         .animation(
-            Animation.easeInOut(duration: 2.0)
+            Animation
+                .easeInOut(duration: 2.0)
+                .repeatForever(autoreverses: true)
         )
         .onTapGesture {
             // Move the circle to the right
