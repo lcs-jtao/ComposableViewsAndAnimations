@@ -57,17 +57,20 @@ struct CustomComposableView: View {
                 .offset(x: offset, y: 0)
             }
         }
-        .animation(
-            Animation
-                .easeInOut(duration: 2.0)
-                .repeatForever(autoreverses: true)
-        )
         .onTapGesture {
-            // Move the circle to the right
-            offset = 100.0
             
-            // Rotate a full revolution
-            currentRotationAngle = .degrees(360)
+            withAnimation(
+                Animation
+                    .easeInOut(duration: 2.0)
+                    .repeatForever(autoreverses: true)
+            ) {
+                // Move the circle to the right
+                offset = 100.0
+                
+                // Rotate a full revolution
+                currentRotationAngle = .degrees(360)
+            }
+
         }
     }
 }
