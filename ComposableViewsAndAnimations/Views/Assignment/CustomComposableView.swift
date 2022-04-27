@@ -84,7 +84,7 @@ struct CustomComposableView: View {
                     .repeatForever(autoreverses: true)
             ) {
                 // Move the car to the right
-                offsetCar = 100.0
+                offsetCar = 70.0
                 
                 // Rotate a full revolution
                 currentRotationAngle = .degrees(360)
