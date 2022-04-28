@@ -27,9 +27,9 @@ struct CustomComposableDescriptionView: View {
                 Text("""
                     Here's an animation of a running car.
 
-                    Enter "true" or "false" below to indicate whether you want the animation to be autoreversed or not.
+                    Enter "true" or "false" below to turn on/off the autoreverse function.
                     
-                    If the input is invalid, the animation will be autoreversed.
+                    Invalid input will activate the function.
                     """)
                 
                 TextField("Enter an input value", text: $phrase)
