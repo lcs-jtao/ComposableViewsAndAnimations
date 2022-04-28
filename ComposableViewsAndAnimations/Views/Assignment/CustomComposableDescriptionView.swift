@@ -25,9 +25,11 @@ struct CustomComposableDescriptionView: View {
                     .padding(.top)
                 
                 Text("""
-                    Replace this with a description of how to use this view.
+                    Here's an animation of a running car.
 
-                    If the view accepts a parameter, provide a control to enter the input below.
+                    Enter "true" or "false" below to indicate whether you want the animation to be autoreversed or not.
+                    
+                    If the input is invalid, the animation will be autoreversed.
                     """)
                 
                 TextField("Enter an input value", text: $phrase)
@@ -38,8 +40,8 @@ struct CustomComposableDescriptionView: View {
             
             List {
                 NavigationLink(destination: CustomComposableView(message: phrase)) {
-                    SimpleListItemView(title: "My Composable View",
-                                       caption: "A brief description of my view")
+                    SimpleListItemView(title: "Joyce's Composable View",
+                                       caption: "A running car")
                 }
             }
             
