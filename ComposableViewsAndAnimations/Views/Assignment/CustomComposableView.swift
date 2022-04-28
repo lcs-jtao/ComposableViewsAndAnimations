@@ -19,6 +19,19 @@ struct CustomComposableView: View {
     // Control the animation
     @State var animationOn = false
     
+    // Control the autoreverses function
+    var message: String
+    
+    var reverseOn: Bool {
+        if message == "true" {
+            return true
+        } else if message == "false" {
+            return false
+        } else {
+            return true
+        }
+    }
+    
     // Start a timer 0.25 seconds after the view appears
     let timer = Timer.publish(every: 0.25, on: .main, in: .common).autoconnect()
     
@@ -81,10 +94,11 @@ struct CustomComposableView: View {
         }
         // Trigger the animation with a timer
         .onReceive(timer) { input in
+            
             withAnimation(
                 Animation
                     .easeInOut(duration: 2.0)
-                    .repeatForever(autoreverses: true)
+                    .repeatForever(autoreverses: reverseOn)
             ) {
                 // Move the car to the right
                 offsetCar = 70.0
@@ -104,6 +118,6 @@ struct CustomComposableView: View {
 
 struct CustomComposableView_Previews: PreviewProvider {
     static var previews: some View {
-        CustomComposableView()
+        CustomComposableView(message: "true")
     }
 }
