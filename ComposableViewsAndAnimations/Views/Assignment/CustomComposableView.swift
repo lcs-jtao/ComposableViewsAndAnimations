@@ -19,6 +19,9 @@ struct CustomComposableView: View {
     // Control the animation
     @State var animationOn = false
     
+    // Start a timer 0.25 seconds after the view appears
+    let timer = Timer.publish(every: 0.25, on: .main, in: .common).autoconnect()
+    
     // MARK: Computed properties
     var body: some View {
         HStack {
@@ -76,8 +79,8 @@ struct CustomComposableView: View {
                 }
             }
         }
-        .onTapGesture {
-            
+        // Trigger the animation with a timer
+        .onReceive(timer) { input in
             withAnimation(
                 Animation
                     .easeInOut(duration: 2.0)
@@ -92,7 +95,9 @@ struct CustomComposableView: View {
                 // Turn on the animation
                 animationOn = true
             }
-
+            
+            // Stop the timer
+            timer.upstream.connect().cancel()
         }
     }
 }
