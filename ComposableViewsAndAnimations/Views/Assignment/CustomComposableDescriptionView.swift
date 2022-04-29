@@ -40,8 +40,12 @@ struct CustomComposableDescriptionView: View {
             
             List {
                 NavigationLink(destination: CustomComposableView(message: phrase)) {
-                    SimpleListItemView(title: "Joyce's Composable View",
+                    SimpleListItemView(title: "First Composable View",
                                        caption: "A running car")
+                }
+                NavigationLink(destination: SecondCustomComposableView()) {
+                    SimpleListItemView(title: "Second Composable View",
+                                       caption: "A loading indicator")
                 }
             }
             
