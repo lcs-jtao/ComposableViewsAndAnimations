@@ -20,17 +20,7 @@ struct CustomComposableView: View {
     @State var animationOn = false
     
     // Control the autoreverses function
-    var message: String
-    
-    var reverseOn: Bool {
-        if message == "true" {
-            return true
-        } else if message == "false" {
-            return false
-        } else {
-            return true
-        }
-    }
+    var reverseOn: Bool
     
     // Start a timer 0.25 seconds after the view appears
     let timer = Timer.publish(every: 0.25, on: .main, in: .common).autoconnect()
@@ -118,6 +108,6 @@ struct CustomComposableView: View {
 
 struct CustomComposableView_Previews: PreviewProvider {
     static var previews: some View {
-        CustomComposableView(message: "true")
+        CustomComposableView(reverseOn: true)
     }
 }

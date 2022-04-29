@@ -10,7 +10,7 @@ import SwiftUI
 struct CustomComposableDescriptionView: View {
     
     // MARK: Stored properties
-    @State private var phrase: String = ""
+    @State private var state: Bool = false
     
     // MARK: Computed properties
     var body: some View {
@@ -27,19 +27,16 @@ struct CustomComposableDescriptionView: View {
                 Text("""
                     Here's an animation of a running car.
 
-                    Enter "true" or "false" below to turn on/off the autoreverse function.
-                    
-                    Invalid input will activate the function.
+                    Use the toggle below to turn on/off the autoreverse function.
                     """)
                 
-                TextField("Enter an input value", text: $phrase)
-                    .autocapitalization(.none)
+                Toggle("Autoreverse", isOn: $state)
                 
             }
             .padding(.bottom)
             
             List {
-                NavigationLink(destination: CustomComposableView(message: phrase)) {
+                NavigationLink(destination: CustomComposableView(reverseOn: state)) {
                     SimpleListItemView(title: "First Composable View",
                                        caption: "A running car")
                 }
