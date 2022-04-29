@@ -40,7 +40,7 @@ struct SecondCustomComposableView: View {
             withAnimation(
                 Animation
                     .easeInOut(duration: 1)
-                    .repeatCount(Int(repeatCounts), autoreverses: true)
+                    .repeatCount(Int(repeatCounts), autoreverses: false)
             ) {
                 // Turn on the animation
                 animationOn = true
