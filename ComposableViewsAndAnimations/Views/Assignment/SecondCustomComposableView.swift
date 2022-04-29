@@ -13,6 +13,9 @@ struct SecondCustomComposableView: View {
     // Control the animation
     @State var animationOn = false
     
+    // Control the repetition
+    @State var repeatCounts: Double
+    
     // Start a timer 0.25 seconds after the view appears
     let timer = Timer.publish(every: 0.25, on: .main, in: .common).autoconnect()
  
@@ -37,7 +40,7 @@ struct SecondCustomComposableView: View {
             withAnimation(
                 Animation
                     .easeInOut(duration: 1)
-                    .repeatForever(autoreverses: false)
+                    .repeatCount(Int(repeatCounts), autoreverses: true)
             ) {
                 // Turn on the animation
                 animationOn = true
@@ -51,6 +54,6 @@ struct SecondCustomComposableView: View {
 
 struct SecondCustomComposableView_Previews: PreviewProvider {
     static var previews: some View {
-        SecondCustomComposableView()
+        SecondCustomComposableView(repeatCounts: 1.0)
     }
 }
