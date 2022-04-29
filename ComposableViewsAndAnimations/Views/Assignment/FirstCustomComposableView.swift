@@ -1,5 +1,5 @@
 //
-//  CustomComposableView.swift
+//  FirstCustomComposableView.swift
 //  ComposableViewsAndAnimations
 //
 //  Created by Russell Gordon on 2021-02-24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomComposableView: View {
+struct FirstCustomComposableView: View {
     
     // MARK: Stored properties
     // Control the horizontal offset
@@ -106,8 +106,8 @@ struct CustomComposableView: View {
     }
 }
 
-struct CustomComposableView_Previews: PreviewProvider {
+struct FirstCustomComposableView_Previews: PreviewProvider {
     static var previews: some View {
-        CustomComposableView(reverseOn: true)
+        FirstCustomComposableView(reverseOn: true)
     }
 }

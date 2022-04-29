@@ -1,5 +1,5 @@
 //
-//  CustomComposableDescriptionView.swift
+//  FirstCustomComposableDescriptionView.swift
 //  ComposableViewsAndAnimations
 //
 //  Created by Russell Gordon on 2021-02-23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomComposableDescriptionView: View {
+struct FirstCustomComposableDescriptionView: View {
     
     // MARK: Stored properties
     @State private var state: Bool = false
@@ -36,13 +36,9 @@ struct CustomComposableDescriptionView: View {
             .padding(.bottom)
             
             List {
-                NavigationLink(destination: CustomComposableView(reverseOn: state)) {
+                NavigationLink(destination: FirstCustomComposableView(reverseOn: state)) {
                     SimpleListItemView(title: "First Composable View",
                                        caption: "A running car")
-                }
-                NavigationLink(destination: SecondCustomComposableView()) {
-                    SimpleListItemView(title: "Second Composable View",
-                                       caption: "A loading indicator")
                 }
             }
             
@@ -53,10 +49,10 @@ struct CustomComposableDescriptionView: View {
     }
 }
 
-struct CustomComposableDescriptionView_Previews: PreviewProvider {
+struct FirstCustomComposableDescriptionView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            CustomComposableDescriptionView()
+            FirstCustomComposableDescriptionView()
         }
     }
 }
