@@ -45,8 +45,8 @@ struct SecondCustomComposableDescriptionView: View {
                 
             List {
                 NavigationLink(destination: SecondCustomComposableView(repeatCounts: repeatedTimes)) {
-                    SimpleListItemView(title: "Second Composable View",
-                                           caption: "A loading indicator")
+                    SimpleListItemView(title: "A loading indicator",
+                                           caption: "Loading...🔄")
                 }
             }
                 

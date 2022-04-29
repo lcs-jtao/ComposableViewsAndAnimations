@@ -11,11 +11,11 @@ struct CustomComposableListView: View {
     var body: some View {
         List {
             NavigationLink(destination: FirstCustomComposableDescriptionView()) {
-                SimpleListItemView(title: "First Composable Description View",
+                SimpleListItemView(title: "First Composable View",
                                    caption: "Describe and show the first animation")
             }
             NavigationLink(destination: SecondCustomComposableDescriptionView()) {
-                SimpleListItemView(title: "Second Composable Description View",
+                SimpleListItemView(title: "Second Composable View",
                                    caption: "Describe and show the second animation")
             }
         }

@@ -37,8 +37,8 @@ struct FirstCustomComposableDescriptionView: View {
             
             List {
                 NavigationLink(destination: FirstCustomComposableView(reverseOn: state)) {
-                    SimpleListItemView(title: "First Composable View",
-                                       caption: "A running car")
+                    SimpleListItemView(title: "Running Car Animation",
+                                       caption: "A red little car 🚗")
                 }
             }
             
